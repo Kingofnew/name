@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【Special Feature】Escorting Gaokao, Soaring Dreams! - Integrated News Editing Practice Coursework</title>
+    <style>
+        body {
+            font-family: 'SimSun', 'FangSong', 'KaiTi', 'Microsoft YaHei', sans-serif; /* */
+            line-height: 1.7; /* */
+            margin: 0; /* */
+            padding: 0; /* */
+            background-color: #f5f7fa; /* */
+            color: #333; /* */
+            font-size: 16px; /* */
+        }
+        .container {
+            width: 92%; /* */
+            max-width: 1400px; /* */
+            margin: 25px auto; /* */
+            background-color: #fff; /* */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* */
+            padding: 40px; /* */
+            border-radius: 6px; /* */
+        }
+
+        header {
+            text-align: center; /* */
+            padding: 20px 0 50px; /* */
+            border-bottom: 6px solid #c00; /* */
+            margin-bottom: 40px; /* */
+            position: relative; /* */
+        }
+        .newspaper-masthead {
+            font-family: 'LiSu', 'FZCuQian-M17S', 'STSong', sans-serif; /* */
+            font-size: 5.8em; /* */
+            font-weight: bold; /* */
+            color: #c00; /* */
+            letter-spacing: 10px; /* */
+            margin: 0; /* */
+            line-height: 1; /* */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* */
+            animation: fadeInDown 1s ease-out; /* */
+        }
+        .subtitle {
+            font-size: 1.9em; /* */
+            color: #444; /* */
+            margin-top: 20px; /* */
+            font-style: normal; /* */
+            position: relative; /* */
+            animation: fadeInUp 1.2s ease-out; /* */
+            letter-spacing: 1px; /* */
+        }
+        .subtitle::before, .subtitle::after {
+            content: '—'; /* */
+            color: #999; /* */
+            margin: 0 15px; /* */
+        }
+        .date-info {
+            font-size: 1.1em; /* */
+            color: #666; /* */
+            margin-top: 30px; /* */
+            display: inline-block; /* */
+            background: #f0f0f0; /* */
+            padding: 8px 20px; /* */
+            border-radius: 4px; /* */
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* */
+        }
+
+        .page-grid {
+            display: grid; /* */
+            grid-template-columns: 2fr 1.2fr 1fr; /* Keeping the 3-column layout */
+            grid-template-rows: auto; /* Row height auto-adjusts */
+            gap: 35px; /* */
+            padding: 0 10px; /* */
+        }
+
+        .grid-block {
+            background-color: #fff; /* */
+            padding: 30px; /* */
+            border-radius: 6px; /* */
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04); /* */
+            border: 1px solid #e0e0e0; /* */
+            overflow: hidden; /* */
+            display: flex; /* */
+            flex-direction: column; /* */
+        }
+        .grid-block h3 {
+            font-family: 'SimHei', 'STHeiti', sans-serif; /* */
+            font-size: 1.8em; /* */
+            color: #222; /* */
+            margin-bottom: 20px; /* */
+            padding-bottom: 10px; /* */
+            border-bottom: 3px solid #eee; /* */
+            line-height: 1.3; /* */
+        }
+
+        /* Adjusting main article column width and row height, making space for image gallery below */
+        .main-article {
+            grid-column: 1 / span 1; /* Main news occupies the first column */
+            grid-row: 1 / span 1; /* Occupies only the first row */
+            padding: 40px; /* */
+            background-color: #fdfefe; /* */
+            position: relative; /* */
+            border-left: 5px solid #c00; /* */
+        }
+        .main-article h2 {
+            font-family: 'YouYuan', 'STXihei', sans-serif; /* */
+            font-size: 3.2em; /* */
+            color: #222; /* */
+            line-height: 1.2; /* */
+            margin-bottom: 25px; /* */
+            text-align: justify; /* */
+        }
+        .main-article .abstract {
+            font-size: 1.3em; /* */
+            font-weight: bold; /* */
+            color: #555; /* */
+            margin-bottom: 35px; /* */
+            border-left: 8px solid #0056b3; /* */
+            padding-left: 25px; /* */
+            line-height: 1.6; /* */
+            background-color: #f8fbff; /* */
+        }
+        .main-article p {
+            text-indent: 2em; /* */
+            margin-bottom: 1.2em; /* */
+            text-align: justify; /* */
+        }
+        .author-source {
+            font-size: 0.9em; /* */
+            color: #777; /* */
+            text-align: right; /* */
+            margin-top: 30px; /* */
+            border-top: 1px dashed #ddd; /* */
+            padding-top: 15px; /* */
+        }
+
+        .visual-report {
+            grid-column: 2 / span 2; /* Visual report section occupies the right two columns */
+            grid-row: 1 / span 1; /* Occupies the first row */
+            background-color: #e6f0f7; /* */
+            padding: 30px; /* */
+            text-align: center; /* */
+            align-items: center; /* */
+            justify-content: center; /* */
+        }
+        .visual-report h3 {
+            color: #0056b3; /* */
+            border-bottom-color: #aaddff; /* */
+        }
+        .visual-report img, .visual-report video {
+            max-width: 100%; /* */
+            height: auto; /* */
+            margin-top: 20px; /* */
+            border: 3px solid #fff; /* */
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); /* */
+            border-radius: 4px; /* */
+        }
+        .caption {
+            font-size: 0.9em; /* */
+            color: #555; /* */
+            text-align: center; /* */
+            line-height: 1.4; /* */
+            margin-top: 15px; /* */
+        }
+
+        /* Adjusting the position of the newly added independent image gallery section */
+        .image-showcase {
+            grid-column: 1 / span 1; /* Moved to the first column on the left */
+            grid-row: 2 / span 3; /* Occupies rows 2, 3, 4, aligned below the main article */
+            background-color: #f0f8ff; /* */
+            padding: 30px;
+            border: 1px solid #cceeff; /* */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* */
+            border-radius: 6px; /* */
+        }
+        .image-showcase h3 {
+            color: #007bff; /* Blue title */
+            border-bottom-color: #dbeeff;
+            text-align: center; /* */
+        }
+        .image-gallery-grid { /* Image grid container */
+            display: grid; /* */
+            grid-template-columns: repeat(2, 1fr); /* Internal two-column layout */
+            gap: 15px; /* Image spacing */
+            margin-top: 20px; /* */
+        }
+        .image-gallery-grid .gallery-item {
+            display: flex; /* */
+            flex-direction: column; /* */
+            align-items: center; /* */
+            text-align: center; /* */
+        }
+        .image-gallery-grid img {
+            max-width: 100%; /* */
+            height: auto; /* */
+            border: 1px solid #ddd; /* */
+            border-radius: 4px; /* */
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05); /* */
+            margin-bottom: 10px; /* */
+        }
+        .image-gallery-grid .caption {
+            font-size: 0.8em; /* */
+            color: #666; /* */
+            margin-top: 0; /* */
+            line-height: 1.3; /* */
+        }
+        .image-showcase .source-info { /* Styling for image section citation information */
+            font-size: 0.85em; /* */
+            color: #777; /* */
+            text-align: left; /* */
+            margin-top: 20px; /* */
+            padding-top: 10px; /* */
+            border-top: 1px dashed #ddd; /* */
+        }
+
+
+        .authority-analysis {
+            grid-column: 2 / span 1; /* Authority analysis occupies the middle column */
+            grid-row: 2 / span 1; /* Adjusted to occupy the 2nd row */
+            background-color: #f7fbf8; /* */
+            border-top: 4px solid #28a745; /* */
+        }
+        .authority-analysis h3 {
+            color: #28a745; /* */
+            border-bottom-color: #bbffcc; /* */
+        }
+        .authority-analysis ul {
+            list-style: none; /* */
+            padding: 0; /* */
+            margin: 0; /* */
+        }
+        .authority-analysis ul li {
+            margin-bottom: 12px; /* */
+            padding-left: 10px; /* */
+            position: relative; /* */
+        }
+        .authority-analysis ul li::before {
+            content: '•'; /* */
+            color: #28a745; /* */
+            position: absolute; /* */
+            left: 0; /* */
+            font-weight: bold; /* */
+        }
+        .authority-analysis ul li a {
+            color: #333; /* */
+            text-decoration: none; /* */
+            transition: color 0.3s; /* */
+            font-size: 1.05em; /* */
+        }
+        .authority-analysis ul li a:hover {
+            color: #0056b3; /* */
+            text-decoration: underline; /* */
+        }
+        .authority-analysis p {
+            font-size: 0.95em; /* */
+            color: #666; /* */
+            margin-top: 15px; /* */
+            line-height: 1.6; /* */
+        }
+
+        .data-insight {
+            grid-column: 3 / span 1; /* Data insight occupies the third column */
+            grid-row: 2 / span 1; /* Adjusted to occupy the 2nd row */
+            background-color: #fcf8f0; /* */
+            border-top: 4px solid #ffc107; /* */
+        }
+        .data-insight h3 {
+            color: #d6a000; /* */
+            border-bottom-color: #ffe6aa; /* */
+        }
+        .data-insight img {
+            max-width: 100%; /* */
+            height: auto; /* */
+            margin-top: 15px; /* */
+            border: 1px solid #ddd; /* */
+        }
+        .data-insight .source-info {
+            font-size: 0.85em; /* */
+            color: #777; /* */
+            text-align: center; /* */
+            margin-top: 10px; /* */
+        }
+
+        .comment-section {
+            grid-column: 2 / span 2; /* Comment section occupies the right two columns */
+            grid-row: 3 / span 2; /* Adjusted to occupy rows 3 and 4, adapting to the new image layout */
+            background-color: #fafafa; /* */
+            border-top: 4px solid #dc3545; /* */
+            text-align: center; /* */
+        }
+        .comment-section h3 {
+            color: #dc3545; /* */
+            border-bottom-color: #ffcccc; /* */
+        }
+        .comment-item {
+            border-bottom: 1px dashed #eee; /* */
+            padding-bottom: 15px; /* */
+            margin-bottom: 15px; /* */
+            text-align: left; /* */
+        }
+        .comment-item:last-child {
+            border-bottom: none; /* */
+            margin-bottom: 0; /* */
+        }
+        .comment-item p {
+            font-size: 1em; /* */
+            line-height: 1.5; /* */
+            color: #444; /* */
+            margin-bottom: 5px; /* */
+        }
+        .comment-author {
+            font-size: 0.85em; /* */
+            color: #888; /* */
+            text-align: right; /* */
+            display: block; /* */
+        }
+
+        footer {
+            text-align: center; /* */
+            padding: 30px; /* */
+            background: #2c3e50; /* */
+            color: #eee; /* */
+            margin-top: 50px; /* */
+            font-size: 0.95em; /* */
+            border-top: 5px solid #c00; /* */
+            border-radius: 0 0 6px 6px; /* */
+        }
+        footer a {
+            color: #fff; /* */
+            text-decoration: none; /* */
+        }
+        footer a:hover {
+            text-decoration: underline; /* */
+        }
+
+        @keyframes fadeInDown { from { opacity: 0; /* */ transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); /* */ } }
+        @keyframes fadeInUp { from { opacity: 0; /* */ transform: translateY(40px); /* */ } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="newspaper-masthead">Escorting Gaokao, Soaring Dreams!</div>
+            <p class="subtitle">2025 National Gaokao Special Report</p>
+            <span class="date-info">Integrated News Editing Practice Coursework &bull; 7 June 2025</span> 
+        </header>
+
+        <div class="page-grid">
+            <section class="grid-block main-article">
+                <h2>Ministry of Education Highlights Key Points for 2025 College Enrollment</h2>
+                <p class="abstract">
+                    Implementing expansion of quality undergraduate programs; severely cracking down on "Gaokao migrants." 
+                </p>
+                <p>
+                    Regarding promoting fairness in urban and rural enrollment opportunities, the "Notice" requires conscientious implementation of quality undergraduate program expansion. Driven by scientific and technological development and national strategic needs, and comprehensively considering the quality of higher education institutions and graduate employment, further optimize the layout of disciplines and majors, and the arrangement of enrollment plans. 
+                </p>
+                <p>
+                    Furthermore, the "Notice" requires improving the selection and supervision mechanism for top innovative talents. It emphasizes coordinating the implementation of various pilot projects for selecting and cultivating top innovative talents, such as the "Strong Base Plan," "Youth Class," "Elite Class," and "Recommended Student" programs, and establishing a sound mechanism that integrates selection, cultivation, and evaluation. 
+                </p>
+                <p>
+                    In actively creating a favorable exam and enrollment environment, the "Notice" reiterates that no form of publicity or hype about "Gaokao top scorers," "enrollment rates," "admission rates," or "high-scoring candidates" is allowed. It also prohibits rewarding teachers and students based on Gaokao scores and linking enrollment rates to teacher evaluations, commendations, or professional title promotions. 
+                </p>
+
+                <p>
+                    The "Notice" also requires that education administrative departments, enrollment examination institutions and their staff, as well as universities, high school-level schools, and their teachers, shall not organize or participate in any form of examination or enrollment training activities or paid volunteer application services. They are also prohibited from allowing educational consulting agencies, off-campus training institutions, or individuals to enter schools to conduct examination or enrollment training, consulting, and advertising activities; nor shall they promote related activities of such agencies or individuals to examinees and parents. 
+                </p>
+                <p class="author-source">China Youth Daily & China Youth Net reporter Yang Jie &nbsp;&nbsp;&nbsp;&nbsp; Source: China Youth Daily</p> 
+                <p class="source-info" style="text-align: left; margin-top: 15px;">
+                    Source: <a href="https://zqb.cyol.com/pc/content/202502/20/content_407155.html" target="_blank">https://zqb.cyol.com/pc/content/202502/20/content_407155.html</a>
+                </p>
+            </section>
+
+            <div class="grid-block visual-report">
+                <h3>【Visual Feature】Xi'an Jiaotong University President Cheers for Students</h3> 
+                
+                <video controls width="100%" height="auto" style="margin-top: 30px; border: 1px solid #ccc;">
+                    <source src="https://vod.zjzw.cn/h0844722229123124767/b0uq502webo9d0x8oscn0kbd7tng70ms.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">During the 2025 Gaokao season, to inspire students to face the Gaokao with high spirits and convey the warm care and earnest expectations of universities, China Education Online, in conjunction with university leaders and teachers nationwide, launched the "Gaokao, Go for it!" video blessing message collection activity. Through sincere words, students can feel warmth and draw strength on their journey of striving and dreaming. </p> 
+            </div>
+
+            <div class="grid-block image-showcase">
+                <h3>Relax and Welcome Gaokao</h3>
+                <div class="image-gallery-grid">
+                    <div class="gallery-item">
+                        <img src="http://henan.people.com.cn/mediafile/pic/20250523/56/15939724042333857024.jpg" alt="High school students competing in 'land dragon boat' race.">
+                        <p class="caption">Fig 1: On May 22, at Luotang Senior High School in Jiangyan District, Taizhou City, Jiangsu Province, senior high school students participated in a "land dragon boat" race. As the Gaokao approaches, schools across the country organize various stress-relief activities for senior high school students to help them relax and prepare for the exam. </p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="http://henan.people.com.cn/mediafile/pic/20250523/21/14387839757471462057.jpg" alt="High school students playing push-rod running game on the playground.">
+                        <p class="caption">Fig 2: On May 15, senior high school students at Shibei Middle School in Jimo District, Qingdao City, Shandong Province, played a push-rod running game on the playground. </p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="http://henan.people.com.cn/mediafile/pic/20250523/22/9429162074598628226.jpg" alt="High school students doing fun sports games">
+                        <p class="caption">Fig 3: On May 21, senior high school students at Zunhua No. 1 Middle School in Hebei Province played fun sports games. </p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="http://henan.people.com.cn/mediafile/pic/20250523/49/17693483157579858661.jpg" alt="High school students participating in a tug-of-war competition.">
+                        <p class="caption">Fig 4: On May 20, senior high school students at Hanshan District No. 1 Middle School in Handan City, Hebei Province, participated in a tug-of-war competition. </p>
+                    </div>
+                </div>
+                <p class="source-info">
+                    Source: <a href="http://henan.people.com.cn/n2/2025/0523/c351638-41236773.html" target="_blank">http://henan.people.com.cn/n2/2025/0523/c351638-41236773.html</a><br>
+                    Author: Xinhua News Agency (Photo by Gu Binbin) 
+                </p>
+            </div>
+
+            <section class="grid-block authority-analysis">
+                <h3>Scientific Diet, Boosting Gaokao | Gaokao Service Station</h3>
+                <ul>
+                    <li><a href="#">As Gaokao approaches, children's brains are like high-speed processors during preparation, requiring high-quality protein, sustained-release energy, and essential nutrients. </a></li>
+    
+                    <li><a href="#">Many parents mistakenly believe that "eating a lot of meat is good for nourishment," unaware that improper diet can increase the child's gastrointestinal burden and affect their preparation state. A scientific three-meal plan should meet the demands of high-intensity brain use while avoiding overeating and drowsiness. Today, let's treat the dining table as a second desk, making every bite of food a "bonus item" and letting scientific nutrition "recharge" students' brains. </a></li>
+                    <li><a href="#">During the preparation and examination period, students' brains are under high tension, and their demand for energy and nutrients is higher than usual. A reasonable diet should meet the following needs: sufficient energy supply, high-quality protein, healthy fats, vitamins and minerals, and adequate hydration. </a></li>
+                </ul>
+                <p>
+                    During the Gaokao period, the weather is hot, food can spoil easily, and some raw or cold foods may contain bacteria, which can easily cause food poisoning. Candidates should avoid consuming raw, cold, greasy, or spicy foods to prevent gastrointestinal discomfort. 
+                </p>
+                <p class="source-info"><a href="http://health.people.com.cn/n1/2025/0606/c14739-40495014.html" target="_blank">http://health.people.com.cn/n1/2025/0606/c14739-40495014.html</a></p>
+                <p>Source: "Student Health News" by Liu Yuanyuan, Department of Health Medicine, Joint Logistics Support Force 980 Hospital</p> 
+            </section>
+
+            <div class="grid-block data-insight">
+                <h3>"You Ai Gaokao Service Station"! Postal Savings Bank of China Guiyang Branch Helps Gaokao Students Pursue Their Dreams</h3> 
+                <img src="http://gz.people.com.cn/NMediaFile/2025/0606/LOCAL1749205069749AKWQ9JSZ5Y.jpg" alt="You Ai Service Station equipped with gel pens, 2B pencils, erasers, and other stationery, as well as an emergency medical kit." style="max-width: 100%; height: auto; margin-top: 15px; border: 1px solid #ddd;"> 
+                <p class="source-info">With the 2025 Gaokao approaching, Postal Savings Bank of China Guiyang Branch actively fulfills its social responsibility by setting up "Gaokao Service Stations" at multiple "You Ai Service Stations" within its jurisdiction, providing comprehensive warm services for students and parents. Until the end of the Gaokao on June 9, 2025, dozens of You Ai Service Stations across the city will transform into "You Ai Gaokao Service Stations" to escort students on their dream journey. </p>
+                <p style="font-size: 0.9em; color: #555; margin-top: 10px;">During the Gaokao period, the You Ai Service Stations under the Guiyang Branch of Postal Savings Bank of China are open for free, providing facilities such as air conditioning, refrigerators, water dispensers, and microwave ovens, offering a comfortable space for students and parents to escape the heat and replenish water. To address potential emergencies during the exam, the stations are also equipped with stationery sets including gel pens, 2B pencils, erasers, and an emergency medical kit containing common medicines, band-aids, and disinfectants, ensuring students face the challenges in their best state. </p>
+
+                <p class="source-info"><a href="http://gz.people.com.cn/n2/2025/0606/c361324-41252241.html" target="_blank">http://gz.people.com.cn/n2/2025/0606/c361324-41252241.html</a></p>
+                <p>Source: People's Daily Online Guizhou Report</p> 
+            </div>
+
+            <section class="grid-block comment-section">
+                <h3>29 New Undergraduate Majors Added to the Catalog</h3>
+                <div class="comment-item">
+                    <p>"The Ministry of Education has updated and released the 'Catalog of Undergraduate Majors in General Higher Education Institutions (2025)', adding 29 new majors. The new catalog includes 93 major categories and 845 types of majors, further strengthening the rapid response of major settings to national strategic needs and high-quality development." 
+                    </p>
+                    <span class="comment-author">— It is understood that the 29 new majors added fully reflect national strategies, market demands, and technological development drivers. </span>
+                </div>
+                <div class="comment-item">
+                    <p>In terms of serving national strategies, new majors such as Regional and National Studies, Carbon Neutrality Science and Engineering, Marine Science and Technology, and Health and Medical Security have been added. To adapt to the forefront of scientific and technological development, new majors like Intelligent Molecular Engineering, Medical Devices and Equipment Engineering, and Spatiotemporal Information Engineering have been added. To actively meet market demands, new majors such as International Cruise Management and Aviation Sports have been added. Focusing on artificial intelligence empowering economic and social development, new majors including Artificial Intelligence Education, Intelligent Audio-Visual Engineering, and Digital Drama, among others, have been introduced. </p>
+                    <span class="comment-author">— Source: <a href="http://jl.people.com.cn/n2/2025/0506/c349771-41218324.html" target="_blank">http://jl.people.com.cn/n2/2025/0506/c349771-41218324.html</a></span> 
+                </div>
+                <p style="font-size: 0.9em; color: #888; margin-top: 20px;">People's Daily Online</p> 
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>Hebei University News Editing Practice Coursework</strong> &bull; &copy; 2025 Editor Liu Xinpeng</p>
+            
+            <p><a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Legal Notice</a></p>
+        </footer>
+    </div>
+</body>
+</html>
